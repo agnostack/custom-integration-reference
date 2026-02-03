@@ -1,0 +1,64 @@
+version = 0.1
+
+[prod.deploy.parameters]
+stack_name = "agnostack-custom-integration-example"
+resolve_s3 = true
+s3_prefix = "agnostack-custom-integration-example"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+
+[prod.global.parameters]
+region = "us-east-1"
+
+
+[staging.deploy.parameters]
+stack_name = "agnostack-custom-integration-example"
+resolve_s3 = true
+s3_prefix = "agnostack-custom-integration-example"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Stage=\"staging\""
+image_repositories = []
+
+[staging.global.parameters]
+region = "us-east-1"
+
+
+[dev.deploy.parameters]
+stack_name = "agnostack-custom-integration-example"
+resolve_s3 = true
+s3_prefix = "agnostack-custom-integration-example"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Stage=\"dev\" LogLevel=\"debug\""
+image_repositories = []
+
+[dev.global.parameters]
+region = "us-east-1"
+
+
+[instance1.deploy.parameters]
+stack_name = "agnostack-custom-integration-instance1"
+resolve_s3 = true
+s3_prefix = "agnostack-custom-integration-instance1"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "InstanceName=\"instance1\" Stage=\"dev\" LogLevel=\"debug\""
+image_repositories = []
+
+[instance1.global.parameters]
+region = "us-east-1"
+
+
+[instance2.deploy.parameters]
+stack_name = "agnostack-custom-integration-instance2"
+resolve_s3 = true
+s3_prefix = "agnostack-custom-integration-instance2"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "InstanceName=\"instance2\" Stage=\"dev\" LogLevel=\"debug\""
+image_repositories = []
+
+[instance2.global.parameters]
+region = "us-east-1"

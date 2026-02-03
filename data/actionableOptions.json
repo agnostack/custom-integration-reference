@@ -1,0 +1,10 @@
+[
+  {
+    "callback": "integration://classify_items",
+    "id": "classify_items",
+    "label": {
+      "value": "Classify Order Items"
+    },
+    "type": "order_action"
+  }
+]

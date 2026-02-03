@@ -1,0 +1,66 @@
+{
+  "private": false,
+  "name": "@agnostack/custom-integration-reference",
+  "version": "1.0.0",
+  "author": "agnoStack Dev <developers@agnostack.com> (https://agnostack.com)",
+  "owner": "agnoStack",
+  "description": "Reference implementation for agnoStack custom integration.",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/agnostack/custom-integration-reference#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agnostack/custom-integration-reference.git"
+  },
+  "engines": {
+    "node": ">=22.x"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "expo",
+        "firebase-admin",
+        "http-proxy",
+        "next",
+        "react",
+        "react-dom",
+        "react-native",
+        "react-is"
+      ]
+    }
+  },
+  "scripts": {
+    "nx": "nx",
+    "build": "sam build",
+    "deploy": "sam deploy",
+    "deploy:guided": "pnpm run deploy --guided",
+    "release:dev": "pnpm run build && pnpm run deploy --config-env dev",
+    "release:staging": "pnpm run build && pnpm run deploy --config-env staging",
+    "release:prod": "pnpm run build && pnpm run deploy --config-env prod",
+    "release:instance1": "pnpm run build && pnpm run deploy --config-env instance1",
+    "release:instance2": "pnpm run build && pnpm run deploy --config-env instance2",
+    "dev": "sam local start-api --config-env dev",
+    "watch": "nx run dev-ngrok --port=4000",
+    "watch:x86": "nx run dev-ngrok-x86 --port=4000",
+    "generate-keypair": "node scripts/generate-keypair.js"
+  },
+  "dependencies": {
+    "@agnostack/env": "latest",
+    "@agnostack/verifyd": "latest",
+    "isomorphic-webcrypto": "2.x",
+    "raw-body": "2.x"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "13.x",
+    "@semantic-release/release-notes-generator": "14.x",
+    "chalk": "4.x",
+    "dotenv": "17.x",
+    "ngrok": "latest",
+    "nx": "latest",
+    "semantic-release": "25.x",
+    "semantic-release-export-data": "1.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

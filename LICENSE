@@ -1,0 +1,29 @@
+LICENSE
+
+Copyright (c) 2026-present agnoStack, Inc.
+
+Permission is hereby granted to use, copy, and modify this software
+(the "Software") solely for the purpose of developing, testing,
+or maintaining integration with agnoStack products and services.
+
+The Software may not be used:
+- as a standalone product or service,
+- to integrate with any platform or service other than agnoStack,
+- to build or enhance a competing product or service,
+- or for any purpose unrelated to agnoStack integrations.
+
+Redistribution of the Software, in whole or in part, is permitted
+only as part of an application or service that integrates with agnoStack
+and does not expose the Software as a general-purpose library.
+
+This Software is provided "AS IS", without warranty of any kind, express
+or implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and noninfringement.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+PUBLISHER, AUTHORS, ANY CONTRIBUTOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.

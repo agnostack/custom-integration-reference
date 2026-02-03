@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+
+# Yarn Integrity file
+.yarn-integrity
+
+# misc
+yarn.lock
+package-lock.json
+.DS_Store
+.env.local
+.env.*.local
+.serverless
+.nx
+.aws-sam
+
+# local dev debugging
+.debug

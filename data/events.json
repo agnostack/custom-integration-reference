@@ -1,0 +1,51 @@
+{
+  "customer": [
+    {
+      "id": "353",
+      "type": "event_basic",
+      "source": "customer-io",
+      "messages": [
+        "750 Points issued"
+      ],
+      "timestamps": {
+        "created_at": "1592848009",
+        "updated_at": "1592848009"
+      },
+      "properties": {
+        "event_type": "loyalty_update"
+      }
+    }
+  ],
+  "order": [
+    {
+      "id": "355",
+      "type": "event_basic",
+      "source": "meldor",
+      "messages": [
+        "Became Ricky Bobby"
+      ],
+      "timestamps": {
+        "created_at": "1686333858",
+        "updated_at": "1686333858"
+      },
+      "properties": {
+        "event_type": "meldor_update"
+      }
+    },
+    {
+      "id": "356",
+      "type": "event_basic",
+      "source": "meldor",
+      "messages": [
+        "Unbecame Ricky Bobby"
+      ],
+      "timestamps": {
+        "created_at": "1688925858",
+        "updated_at": "1688925858"
+      },
+      "properties": {
+        "event_type": "meldor_update"
+      }
+    }
+  ]
+}

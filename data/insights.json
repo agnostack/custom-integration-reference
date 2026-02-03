@@ -1,0 +1,49 @@
+{
+  "customer": [
+    {
+      "data": [
+        {
+          "icon_title": "Intercom",
+          "icon_url": "https://leadsbridge.com/wp-content/themes/leadsbridge/img/integration-lg-logos/logo75.png",
+          "identifier": "Role",
+          "type": "data_pill",
+          "value": "wizard"
+        },
+        {
+          "identifier": "Group",
+          "type": "data_pill",
+          "value": "Technology"
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "data": [
+        {
+          "icon_title": "Intercom",
+          "icon_url": "https://leadsbridge.com/wp-content/themes/leadsbridge/img/integration-lg-logos/logo75.png",
+          "identifier": "Repeat Offender?",
+          "type": "data_boolean",
+          "value": "true"
+        },
+        {
+          "identifier": "My Callouts",
+          "type": "data_callouts",
+          "value": {
+            "message": "This is a custom callout",
+            "alerts": [
+              {
+                "severity": "CRITICAL",
+                "name": "Custom Alert",
+                "description": "Item cannot be delivered to this address."
+              }
+            ]
+          }
+        }
+      ],
+      "identifier": "Customer Indicators",
+      "provider": "Shopify"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  # Customer specific variables
+
+  # Common variables
+  InstanceName:
+    Type: String
+    Default: example
+
+  AppName:
+    Type: String
+    Default: agnostack-custom-integration
+
+  Stage:
+    Type: String
+    Default: prod
+    AllowedValues:
+      - dev
+      - staging
+      - prod
+
+  LogLevel:
+    Type: String
+    Default: info
+    AllowedValues:
+      - trace
+      - debug
+      - info
+      - warn
+      - error
+
+  Architecture:
+    Type: String
+    Default: arm64
+    AllowedValues: [x86_64, arm64]
+
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Timeout: 10
+    MemorySize: 512
+    Architectures:
+      - !Ref Architecture
+    Environment:
+      Variables:
+        APP_NAME: !Ref AppName
+        INSTANCE_NAME: !Ref InstanceName
+        LOG_LEVEL: !Ref LogLevel
+        STAGE: !Ref Stage
+
+        # Customer specific Variables
+
+        # Customer specific Public Variables (store/update in SSM)
+        PUBLIC_KEY: !Sub "{{resolve:ssm:/${AppName}-${InstanceName}/PUBLIC_KEY}}"
+        SHARED_SECRET: !Sub "{{resolve:ssm:/${AppName}-${InstanceName}/SHARED_SECRET}}"
+
+        # Customer specific Secure Variables (store/update in Secrets Manager)
+        SECURE: !Sub "{{resolve:secretsmanager:/${AppName}-${InstanceName}/SECURE}}"
+        PRIVATE_KEY: ""
+
+Resources:
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      Name: !Sub "${AppName}-${InstanceName}-${Stage}"
+      StageName: !Ref Stage
+
+  ExecuteFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      CodeUri: .
+      Handler: src/handlers.execute
+
+      Policies:
+        - SSMParameterReadPolicy:
+            ParameterName: !Sub "/${AppName}-${InstanceName}/*"
+
+      Events:
+        ExecutePostProxy:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /{route+}
+            Method: POST
+
+        ExecutePostRoot:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /
+            Method: POST
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "${HttpApi.ApiEndpoint}/${Stage}/"

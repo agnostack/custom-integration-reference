@@ -1,0 +1,24 @@
+{
+  "targets": {
+    "dev-ngrok": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run .:dev --port={args.port} --output-style=stream --nx-bail=true",
+          "node scripts/ngrok --port={args.port}"
+        ],
+        "color": true
+      }
+    },
+    "dev-ngrok-x86": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run .:dev --port={args.port} --parameter-overrides Architecture=x86_64 --output-style=stream --nx-bail=true",
+          "node scripts/ngrok --port={args.port}"
+        ],
+        "color": true
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "order": [
+    {
+      "identifier": "Meldor",
+      "data": [
+        {
+          "identifier": "Customer Identifier",
+          "type": "data_text",
+          "value": "12344355"
+        },
+        {
+          "identifier": "Snaggletoothed",
+          "type": "data_boolean",
+          "value": true
+        },
+        {
+          "identifier": "Is Ricky Bobby?",
+          "type": "data_boolean",
+          "value": false
+        }
+      ]
+    },
+    {
+      "identifier": "Segment",
+      "data": [
+        {
+          "identifier": "Member Value",
+          "type": "data_percent",
+          "value": 80,
+          "icon_url": "https://growthjunkie.com/wp-content/uploads/2018/03/segment_logo.png",
+          "icon_title": "Segment"
+        }
+      ]
+    }
+  ],
+  "customer": [
+    {
+      "identifier": "Intercom",
+      "data": [
+        {
+          "identifier": "Member Number",
+          "type": "data_text",
+          "value": "12344355",
+          "icon_url": "https://leadsbridge.com/wp-content/themes/leadsbridge/img/integration-lg-logos/logo75.png",
+          "icon_title": "Intercom"
+        },
+        {
+          "identifier": "Loyalty Tier",
+          "type": "data_badge",
+          "value": "Gold",
+          "icon_url": "https://leadsbridge.com/wp-content/themes/leadsbridge/img/integration-lg-logos/logo75.png",
+          "icon_title": "Intercom"
+        }
+      ]
+    },
+    {
+      "identifier": "Segment",
+      "data": [
+        {
+          "identifier": "Accepts Marketing",
+          "type": "data_boolean",
+          "value": true,
+          "icon_url": "https://growthjunkie.com/wp-content/uploads/2018/03/segment_logo.png",
+          "icon_title": "Segment"
+        },
+        {
+          "identifier": "Member Value",
+          "type": "data_percent",
+          "value": 80,
+          "icon_url": "https://growthjunkie.com/wp-content/uploads/2018/03/segment_logo.png",
+          "icon_title": "Segment"
+        }
+      ]
+    }
+  ]
+}
