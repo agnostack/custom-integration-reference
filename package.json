@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@agnostack/custom-integration-reference",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "agnoStack Dev <developers@agnostack.com> (https://agnostack.com)",
   "owner": "agnoStack",
   "description": "Reference implementation for agnoStack custom integration.",
